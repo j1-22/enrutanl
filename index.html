@@ -1,42 +1,75 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>En Ruta NL - Registro</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Citizen Registration Management</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-100 font-sans">
-    <nav class="bg-[#2d572c] p-4 text-white shadow-lg">
-        <h1 class="text-xl font-bold text-center">IDENTIDAD EN RUTA NUEVO LEÓN</h1>
-    </nav>
+<body>
+    <header>
+        <h1>Citizen Registration Management</h1>
+        <nav>
+            <ul>
+                <li><a href="#registration">Registration Forms</a></li>
+                <li><a href="#appointments">Appointment Scheduling</a></li>
+                <li><a href="#statistics">Real-Time Statistics</a></li>
+                <li><a href="#heatmaps">Heat Maps</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <main class="max-w-4xl mx-auto p-6">
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-[#d4af37]">
-                <h2 class="text-lg font-bold mb-4 text-gray-700">Registro de Ciudadano (Rechazo de Servicio)</h2>
-                <div class="space-y-4">
-                    <input type="text" placeholder="Nombre completo" class="w-full p-2 border rounded">
-                    <input type="number" placeholder="Edad aproximada" class="w-full p-2 border rounded">
-                    <select class="w-full p-2 border rounded">
-                        <option>Motivo del rechazo: Falta de Acta</option>
-                        <option>Motivo del rechazo: Sin CURP</option>
-                    </select>
-                    <input type="text" placeholder="Clínica / Escuela / Punto de detección" class="w-full p-2 border rounded">
-                    <button class="w-full bg-[#d4af37] text-white font-bold py-3 rounded hover:bg-[#b8962e] transition">
-                        AGENDAR CITA PRIORITARIA
-                    </button>
-                </div>
-            </div>
+    <main>
+        <section id="registration">
+            <h2>Registration Forms</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <button type="submit">Register</button>
+            </form>
+        </section>
 
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h2 class="text-lg font-bold mb-4 text-gray-700">Visualización en Mapa de Calor</h2>
-                <div class="bg-gray-200 h-64 rounded flex items-center justify-center border-2 border-dashed border-gray-400 text-gray-500">
-                    [ Aquí se visualiza el Mapa de Calor de NL ]
-                </div>
-                <p class="text-xs mt-4 text-gray-500 italic">Este registro enviará la ubicación GPS automáticamente al Registro Civil sobre Ruedas.</p>
+        <section id="appointments">
+            <h2>Appointment Scheduling</h2>
+            <form>
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+                <button type="submit">Schedule</button>
+            </form>
+        </section>
+
+        <section id="statistics">
+            <h2>Real-Time Statistics</h2>
+            <div id="stats">
+                <!-- Real-time statistics will be displayed here -->
             </div>
-        </div>
+        </section>
+
+        <section id="heatmaps">
+            <h2>Heat Maps</h2>
+            <div id="heatmap">
+                <!-- Heat maps will be displayed here -->
+            </div>
+        </section>
+
+        <section id="bulk-registration">
+            <h2>Bulk Registration</h2>
+            <form>
+                <label for="bulk-file">Upload CSV:</label>
+                <input type="file" id="bulk-file" name="bulk-file" accept=".csv">
+                <button type="submit">Upload</button>
+            </form>
+        </section>
     </main>
+
+    <footer>
+        <p>Administrative Controls for Clinic and School Staff</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
